@@ -6,12 +6,12 @@ import pprint
 
 # list of feeds to pull down
 hit_list = [
-    "http://www.radioveronica.nl/specials/programma/de-veronica-ochtendshow/feed/",
-    "http://www.radioveronica.nl/specials/programma/goud-van-oud/feed/",
-    "http://www.radioveronica.nl/specials/programma/alleen-echte-hits/feed/",
-    "http://www.radioveronica.nl/specials/programma/somertijd/feed/",
-    "http://www.radioveronica.nl/specials/programma/stoet-in-de-avond/feed/",
-    "http://www.radioveronica.nl/specials/programma/volle-vrijdagshow/feed/"]
+    "http://www.yourwebsite.nl/specials/programma/de-veronica-ochtendshow/feed/",
+    "http://www.yourwebsite.nl/specials/programma/goud-van-oud/feed/",
+    "http://www.yourwebsite.nl/specials/programma/alleen-echte-hits/feed/",
+    "http://www.yourwebsite.nl/specials/programma/somertijd/feed/",
+    "http://www.yourwebsite.nl/specials/programma/stoet-in-de-avond/feed/",
+    "http://www.yourwebsite.nl/specials/programma/volle-vrijdagshow/feed/"]
 
 # list of program names
 programs = [
