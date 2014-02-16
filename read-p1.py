@@ -1,8 +1,10 @@
+#!/usr/bin/python
 # SMARTMETER P1 reader
 version = "1.0"
 import sys
 import serial
 import time
+import sqlite3
 
 # timeout when script takes to long
 timeout = time.time() + 30 # 30 sec from now
@@ -54,10 +56,10 @@ while True:
       dataList[3] = processData(data)
     # currentPowerUsage
     elif data[4:9] == "1.7.0":
-      dataList[4] = processData(data)
+      dataList[4] = processData(data)*1000
     # currentPowerReturn
     elif data[4:9] == "2.7.0":
-      dataList[5] = processData(data)
+      dataList[5] = processData(data)*1000
     # gasUsage
     elif data[0] == "(" and data[10] == ")":
       dataList[6] = processData(data)
@@ -72,7 +74,15 @@ while True:
 #Close port and show status
 try:
     ser.close()
-except:
+    except:
     sys.exit ("Error %s. Could not close serial port" % ser.name )
 
-print (dataList)
+conn = sqlite3.connect('/var/db/pg')
+c = conn.cursor()
+q = '''INSERT INTO "energy" ("power_usage_low","power_usage_hi","power_return_low","power_return_hi","current_power_usage","current_power_return","gas_usage") VALUES (?,?,?,?,?,?,?)'''
+c.execute(q, (dataList))
+conn.commit()
+c.close()
+conn.close()
+
+print (dataList[4])
