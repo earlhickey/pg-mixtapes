@@ -56,10 +56,16 @@ while True:
       dataList[3] = processData(data)
     # currentPowerUsage
     elif data[4:9] == "1.7.0":
-      dataList[4] = processData(data)*1000
+      currentPowerUsage = processData(data)*1000
+      # check for unreal value
+      if currentPowerUsage <= "25000":
+        dataList[4] = currentPowerUsage
     # currentPowerReturn
     elif data[4:9] == "2.7.0":
-      dataList[5] = processData(data)*1000
+      currentPowerReturn = processData(data)*1000
+      # check for unreal value
+      if currentPowerReturn <= "25000":
+        dataList[5] = currentPowerReturn
     # gasUsage
     elif data[0] == "(" and data[10] == ")":
       dataList[6] = processData(data)
