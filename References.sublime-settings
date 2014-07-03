@@ -1,0 +1,17 @@
+{
+    "color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+    "font_size": 11,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "theme": "Spacegray.sublime-theme",
+    "rulers": [80],
+    "auto_indent": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "use_tab_stops": true,
+    "trim_automatic_white_space": true,
+    "draw_white_space": "all",
+    "trim_trailing_white_space_on_save": true
+}
