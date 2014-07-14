@@ -9,3 +9,5 @@ CREATE TABLE energy(
    gas_usage NUMERIC,
    datetime TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE INDEX datetime_index ON energy (datetime);
