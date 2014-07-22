@@ -1,18 +1,26 @@
 {
-    "color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
-    "font_size": 11,
-    "ignored_packages":
-    [
-        "Vintage"
-    ],
-    "theme": "Spacegray.sublime-theme",
-    "rulers": [80],
-    "auto_indent": true,
-    "tab_size": 4,
-    "translate_tabs_to_spaces": true,
-    "use_tab_stops": true,
-    "trim_automatic_white_space": true,
-    "draw_white_space": "all",
-    "trim_trailing_white_space_on_save": true,
-    "folder_exclude_patterns": [".sass-cache", ".settings", ".git"],
+	"auto_indent": true,
+	"color_scheme": "Packages/User/base16-ocean.dark (SL).tmTheme",
+	"detect_indentation": false,
+	"draw_white_space": "all",
+	"folder_exclude_patterns":
+	[
+		".sass-cache",
+		".settings",
+		".git"
+	],
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		80
+	],
+	"tab_size": 4,
+	"theme": "Spacegray.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"use_tab_stops": true
 }
