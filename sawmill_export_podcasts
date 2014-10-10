@@ -1,0 +1,31 @@
+# Export Sawmill stats to CSV by name
+# Usage: /usr/local/bin/sawmill_export_podcasts name 
+
+#!/usr/bin/perl -w
+use strict;
+
+my $sawmill = "/usr/local/bin/sawmill/sawmill7.2.18";
+my $outputPath = "/var/www/";
+
+# localtime minus 30 days
+my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time - (86400 * 30));
+$year += 1900;
+my @month_abbr = qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec );
+
+my $exportStation = $ARGV[0] || "skyradio";
+my $exportMonth = $ARGV[1] || $month_abbr[${mon}];
+my $exportYear = $ARGV[2] || $year;
+my $exportFilename = "podcasts_${exportStation}_${exportMonth}.csv";
+
+print "${exportStation}\n";
+print "${exportMonth}\n";
+print "${exportYear}\n";
+print "${exportFilename}\n";
+
+# kill Sawmill to prefend 'Cannot generate report...' error
+system("killall sawmill7.2.18");
+
+system("${sawmill} -p srg_webserver_varnish_logs -a ect -rn page -f \"(date_time >= '01/${exportMonth}/${exportYear} 00:00:00') and (date_time <= '31/${exportMonth}/${exportYear} 23:59:59') and (page matches '*/cdn/podcast_${exportStation}*')\" statistics.reports.page.report_elements.page.only_bottom_level_items true > ${outputPath}${exportFilename}");
+
+# start Sawmill again
+system("/usr/local/bin/sawmill/sawmill7.2.18 &");
