@@ -6,21 +6,21 @@ import pprint
 
 # list of feeds to pull down
 hit_list = [
-    "http://www.yourwebsite.nl/specials/programma/de-veronica-ochtendshow/feed/",
-    "http://www.yourwebsite.nl/specials/programma/goud-van-oud/feed/",
-    "http://www.yourwebsite.nl/specials/programma/alleen-echte-hits/feed/",
-    "http://www.yourwebsite.nl/specials/programma/somertijd/feed/",
-    "http://www.yourwebsite.nl/specials/programma/stoet-in-de-avond/feed/",
-    "http://www.yourwebsite.nl/specials/programma/volle-vrijdagshow/feed/"]
+    "http://www.yourwebsite.nl/1/feed/",
+    "http://www.yourwebsite.nl/2/feed/",
+    "http://www.yourwebsite.nl/3/feed/",
+    "http://www.yourwebsite.nl/4/feed/",
+    "http://www.yourwebsite.nl/5/feed/",
+    "http://www.yourwebsite.nl/6/feed/"]
 
 # list of program names
 programs = [
-    "De Ochtendshow",
-    "Goud van Oud",
-    "Alleen Echte Hits",
-    "Somertijd",
-    "Stoet in de Avond",
-    "Volle Vrijdagshow"]
+    "Feed 1",
+    "Feed 2",
+    "Feed 3",
+    "Feed 4",
+    "Feed 5",
+    "Feed 6"]
 
 # list of program names
 images = [
